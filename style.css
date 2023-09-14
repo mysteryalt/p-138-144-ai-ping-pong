@@ -25,6 +25,11 @@
     h4 {
         background-color: beige;
         line-height: 2;
-        margin: 0px;
+        margin-bottom: 0px;
         }
     
+
+    canvas {
+        border-radius: 20%;
+        border: 5px black;
+    }
