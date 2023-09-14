@@ -1,6 +1,10 @@
 
 /*created by prashant shukla */
 
+wristX = 0;
+wristY = 0;
+wristScore = 0;
+
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -33,12 +37,29 @@ function setup(){
   poseNet.on('pose', gotPoses);
 }
 
+function gotPoses(results) {
+  if (results.length > 0) {
+		wristX = results[0].pose.rightWrist.x;
+		wristY = results[0].pose.rightWrist.y;
+    wristScore = results[0].pose.rightWrist.score;
+		console.log(results);
+		console.log("wristX = " + wristX + "wristY = " + wristY);
+	}
+}
+
 function modelLoaded() {
   console.log("model loaded");
 }
 
 
 function draw(){
+
+  if (wristScore > 0.2) {
+    fill(A0A8FF);
+    stroke(A0A8FF);
+    circle(wristX,wristY,5);
+
+  };
 
  image(video , 0,0,700,600);
  background(0); 
