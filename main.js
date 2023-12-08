@@ -52,8 +52,8 @@ function modelLoaded() {
 }
 
 function preload(){
-  balltouchpaddle = loadSound(ball_touch_paddel.wav);
-ballmissed = loadSound(missed.wav)
+  balltouchpaddle = loadSound("ball_touch_paddel.wav");
+ballmissed = loadSound("missed.wav");
 }
 
 
